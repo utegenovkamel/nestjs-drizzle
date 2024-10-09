@@ -1,0 +1,41 @@
+node_modules
+# Игнорировать файлы и папки, связанные с разработкой
+.git
+.gitignore
+.vscode
+.idea
+*.log
+*.md
+
+# Игнорировать файлы сборки и кэша
+dist
+build
+.cache
+.npm
+
+# Игнорировать файлы конфигурации и окружения
+.env
+.env.*
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Игнорировать файлы тестов
+test
+coverage
+
+# Игнорировать временные файлы
+tmp
+temp
+
+# Игнорировать файлы документации
+docs
+
+# Игнорировать файлы зависимостей (уже игнорируется node_modules)
+package-lock.json
+yarn.lock
+
+# Игнорировать файлы Docker
+Dockerfile
+docker-compose*.yml

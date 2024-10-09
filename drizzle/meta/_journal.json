@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1728484523190,
+      "tag": "0000_create-articles-table",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1728493285506,
+      "tag": "0001_create-users-and-addresses-tables",
+      "breakpoints": true
+    }
+  ]
+}

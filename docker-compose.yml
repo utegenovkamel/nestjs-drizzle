@@ -1,0 +1,42 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    volumes:
+      - ./src:/app/src
+
+  postgres:
+    container_name: postgres-nestjs-drizzle
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/docker_data/pgadmin:/data/postgres
+    env_file:
+      - docker.env
+    networks:
+      - postgres
+
+  pgadmin:
+    links:
+      - postgres:postgres
+    container_name: pgadmin-nestjs-drizzle
+    image: dpage/pgadmin4:8.6
+    ports:
+      - "8080:80"
+    volumes:
+      - ~/docker_data/pgadmin:/root/.pgadmin
+    env_file:
+      - docker.env
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
